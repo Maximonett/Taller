@@ -14,8 +14,8 @@ alumno=record
 	notaObtenida:vMaterias;
 end;
 
-listaAlu=^nodo
-nodo=record;
+listaAlu=^nodo;
+nodo=record
 	dato:alumno;
 	sig:listaAlu;
 end;
@@ -26,7 +26,7 @@ var
 begin
 	for i:=1 to 36 do
 		V[i]:=0;
-end
+end;
 
 procedure lectura(var alu:alumno);
 var
@@ -41,8 +41,8 @@ begin
 	writeln('Escribir la nota de cada materia aprobada: ');
 		for i:=1 to alu.cantAprobadas do
 			readln(alu.notaObtenida[i]);
-	writeln('Escribir el numero de alumno: ')
-	readln(alu.num)
+	writeln('Escribir el numero de alumno: ');
+	readln(alu.num);
 end;
 
 procedure agregarAdelante(var L:listaAlu; A:alumno);
@@ -80,7 +80,7 @@ procedure recorrerProcesar(L:listaAlu);
 begin
 	while (L <> nil)do begin
 		writeln('Numero de Alumno: ',L^.dato.num);
-		writeln('Promedio: ', calcularPromedios(L^.dato.notaObtenida,L^.dato.cantAprobados):0:2);
+		writeln('Promedio: ', calcularPromedios(L^.dato.notaObtenida,L^.dato.cantAprobadas):0:2);
 		L:=L^.sig;
 	end;
 end;
